@@ -1,11 +1,21 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/home/Home';
+import Bookmarks from './components/bookmarks/Bookmarks';
+import Definition from './components/definition/Definition';
+import About from './components/about/About';
 
-function App() {
+const App = () => {
   return (
-    <div className="App font-century ">
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className=' min-h-screen bg-cfour font-century p-10 text-center'>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/bookmarks" element={<Bookmarks />} />
+        <Route path="/search/:word" element={<Definition />} />
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
