@@ -14,6 +14,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="/definition/:word" element={<Definition />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
     </div>

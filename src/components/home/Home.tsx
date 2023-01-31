@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import homepic from './homepic-blue.png'
 import { useNavigate } from 'react-router-dom';
+import {FaInfoCircle} from 'react-icons/fa'
 
 const Home = () => {
   const [word, setWord] = useState<string>('');
@@ -20,13 +21,15 @@ const Home = () => {
       <p className=' text-sm'>your everyday dictionary for easy access</p>
     <div className='p-10'>
       <form onSubmit={handleSubmit}>
-      <input className='w-64 h-10 border-2 border-cfive rounded-md text-center'
+      <input className='w-64 h-12 border-2 border-cfour bg-cfour rounded-lg text-center text-cone'
       placeholder='search'
       value={word}
       onChange={e => setWord(e.target.value)}></input>
       </form>
       </div>
-    </div></>
+      <FaInfoCircle className='text-2xl cursor-pointer' onClick={()=> navigate('/about')} />
+    </div>
+    </>
   )
 }
 

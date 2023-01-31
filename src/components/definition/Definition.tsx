@@ -22,24 +22,24 @@ const Definition = () => {
   return (
     <><div className='flex justify-between mb-10 text-cone'>
       <MdOutlineArrowBack className='text-2xl cursor-pointer	' onClick={()=> navigate('/')}/>
-      <BsBookmarkHeart className='text-2xl' />
+      <BsBookmarkHeart className='text-2xl cursor-pointer' />
     </div>
     <div className='flex flex-col items-center'>
-      <h1 className='text-3xl font-bold h-20 w-auto text-cfive bg-ctwo rounded-md grid grid-cols-1 place-items-center mb-5 pl-5 pr-5'>{word}</h1>
-      <AiFillSound className='text-xl text-cone mb-5' />
+      <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-5 pl-8 pr-8'>{word}</h1>
+      <AiFillSound className='text-2xl text-cone mb-5 cursor-pointer' />
     </div>
     <div>
-      <div className='border-4 border-cfour rounded-md bg-cfour'>
+      <div className='border-4 border-cfour rounded-lg bg-cfour'>
       <h4 className='text-md text-cthree text-center mt-2'>definition</h4>
         {definitionData.map (def =>
           def.meanings.map((meaning: { partOfSpeech:string, definitions:[] }) =>
-          (<ul><li key={meaning.partOfSpeech} className='text-lg text-cone mt-3 ml-3'>{meaning.partOfSpeech}
+          (<ul><li key={meaning.partOfSpeech} className='text-md text-cone mt-3 ml-3'>{meaning.partOfSpeech}
           {meaning.definitions.map((define: { definition:string }) =>
             <ul><li key={define.definition} className='text-sm list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li></ul>
             )}
             </li></ul>)))}
             </div>
-            <div className='border-4 border-cfour rounded-md bg-cfour mt-5'>
+            <div className='border-4 border-cfour rounded-lg bg-cfour mt-5'>
       <h4 className='text-md text-cthree text-center mt-2 mb-3'>synonyms</h4>
       <div className='grid grid-cols-2'>
         {definitionData.map (def => 
