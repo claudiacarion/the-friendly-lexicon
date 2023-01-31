@@ -7,7 +7,7 @@ import About from './components/about/About';
 
 const App = () => {
   return (
-    <div className=' min-h-screen bg-cfive font-century p-10 text-center'>
+    <div className=' min-h-screen bg-cfive font-century p-10'>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />

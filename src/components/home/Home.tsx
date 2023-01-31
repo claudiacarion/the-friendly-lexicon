@@ -14,10 +14,10 @@ const Home = () => {
   }
 
   return (
-    <><div className='flex flex-col items-center text-cone'>
+    <><div className='flex flex-col items-center text-cone mt-10'>
       <img src={homepic} alt="img" className="h-auto w-64" />{/*https://www.freepik.com/premium-vector/young-woman-enjoy-reading-book_32439304.htm#query=book&position=5&from_view=search&track=sph*/}
       <h1 className='font-bold text-2xl pb-2'>the friendly lexicon</h1>
-      <p className='text-sm'>your everyday dictionary for easy access</p>
+      <p className=' text-sm'>your everyday dictionary for easy access</p>
     <div className='p-10'>
       <form onSubmit={handleSubmit}>
       <input className='w-64 h-10 border-2 border-cfive rounded-md text-center'
