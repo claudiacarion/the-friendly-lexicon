@@ -13,7 +13,7 @@ module.exports = {
         ctwo: "#242F40",
         cthree: "#947627",
         cfour: "#FAF9F6",
-        cfive: "#CBCBCB",
+        cfive: "#e5e5e5",
       }
     },
   },

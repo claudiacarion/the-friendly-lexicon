@@ -28,17 +28,24 @@ const Definition = () => {
       <h1 className='text-2xl font-bold h-24 w-64 text-cfive bg-ctwo rounded-md grid grid-cols-1 place-items-center mb-5'>{word}</h1>
       <AiFillSound className='text-xl text-cone mb-5' />
     </div>
-    <div className=''>
+    <div>
+      <div className='border-4 border-cfour rounded-md bg-cfour'>
       <h4 className='text-md text-cthree'>definition</h4>
         {definitionData.map (def =>
-          def.meanings.map((meaning: { definitions:[] }) =>
-          meaning.definitions.map((define: { definition: string }) =>
-          (<ul><li className='text-sm'>{define.definition}</li></ul>))))}
+          def.meanings.map((meaning: { partOfSpeech:string, definitions:[] }) =>
+          (<ul><li key={meaning.partOfSpeech} className='text-lg text-cone mt-3'>{meaning.partOfSpeech}
+          {meaning.definitions.map((define: { definition:string }) =>
+            <ul><li key={define.definition} className='text-sm list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li></ul>
+            )}
+            </li></ul>)))}
+            </div>
+            <div className='border-4 border-cfour rounded-md bg-cfour mt-5'>
       <h4 className='text-md text-cthree'>synonyms</h4>
         {definitionData.map (def => 
           def.meanings.map ((synonym: { synonyms:[] }) =>
-          synonym.synonyms.map ((syn: string) =>
-          (<ul><li className='text-sm'>{syn}</li></ul>))))}
+          synonym.synonyms.map ((synonym: string) =>
+          (<ul><li key={synonym} className='text-sm'>{synonym}</li></ul>))))}
+          </div>
     </div></>
   )
 }

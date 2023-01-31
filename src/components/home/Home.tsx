@@ -10,7 +10,7 @@ const Home = () => {
     e.preventDefault();
     const searchedWord = word.trim().toLowerCase();
     if (!searchedWord || searchedWord.split(' ').length > 1) return;
-    navigate(`/search/${searchedWord}`);
+    navigate(`/definition/${searchedWord}`);
   }
 
   return (
