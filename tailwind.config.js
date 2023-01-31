@@ -11,8 +11,8 @@ module.exports = {
       colors: {
         cone: "#363636",
         ctwo: "#242F40",
-        cthree: "#CCA43B",
-        cfour: "#f9f9f9",
+        cthree: "#947627",
+        cfour: "#FAF9F6",
         cfive: "#CBCBCB",
       }
     },
