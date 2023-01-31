@@ -25,7 +25,7 @@ const Definition = () => {
       <BsBookmarkHeart className='text-2xl' />
     </div>
     <div className='flex flex-col items-center'>
-      <h1 className='text-2xl font-bold h-20 w-64 text-cfive bg-ctwo rounded-md grid grid-cols-1 place-items-center mb-5'>{word}</h1>
+      <h1 className='text-3xl font-bold h-20 w-auto text-cfive bg-ctwo rounded-md grid grid-cols-1 place-items-center mb-5 pl-5 pr-5'>{word}</h1>
       <AiFillSound className='text-xl text-cone mb-5' />
     </div>
     <div>
