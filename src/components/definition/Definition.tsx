@@ -4,7 +4,7 @@ import {IoMdArrowRoundBack} from 'react-icons/io'
 import {BsFillBookmarkHeartFill} from 'react-icons/bs'
 import {AiFillSound} from 'react-icons/ai'
 import {BiLoaderCircle} from 'react-icons/bi'
-// import {MdError} from 'react-icons/md'
+import {MdError} from 'react-icons/md'
 
 const Definition = () => {
   const { word } = useParams<{word: string}>();
@@ -12,6 +12,7 @@ const Definition = () => {
   const [definitionData, setDefData] = useState([] as any[]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [audio, setAudio] = useState();
 
   useEffect(() => {
     const fetchDefinition = async () => {
@@ -20,6 +21,11 @@ const Definition = () => {
         const data = await response.json();
         setDefData(data);
         setLoading(false);
+        const phonetics = data[0].phonetics;
+        if(!phonetics.length) return;
+        const url = phonetics[0].audio;
+        console.log('URL', url)
+        setAudio(url);
       } catch {
         setError(true);
       }
@@ -31,7 +37,9 @@ const Definition = () => {
   if (error) {
     return (
       <div className='flex flex-col items-center mt-20'>
-        <p className='text-cone text-xl'>error</p>
+        <MdError className='text-4xl text-ctwo mb-3' />
+        <p className='text-cone text-xl mb-5'>not found</p>
+        <IoMdArrowRoundBack className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/')}/>
       </div>
   )}
 
@@ -43,6 +51,12 @@ const Definition = () => {
       </div>
     )
   }
+  
+  let sound = new Audio(audio);
+
+  const playSound = () => {
+    sound.play();
+  }
 
   return (
     <>
@@ -52,7 +66,7 @@ const Definition = () => {
     </div>
     <div className='flex flex-col items-center'>
       <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-5 pl-8 pr-8'>{word}</h1>
-      <AiFillSound className='text-2xl text-ctwo mb-5 cursor-pointer' />
+      <AiFillSound className='text-2xl text-ctwo mb-5 cursor-pointer' onClick={playSound}/>
     </div>
     <div>
       <div className='border-4 border-cfour rounded-lg bg-cfour'>
