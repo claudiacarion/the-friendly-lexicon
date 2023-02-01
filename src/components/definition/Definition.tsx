@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useParams, useNavigate } from 'react-router-dom'
 import {IoMdArrowRoundBack} from 'react-icons/io'
-import {BsFillBookmarkHeartFill} from 'react-icons/bs'
+import {BsBookmarkHeart} from 'react-icons/bs'
 import {AiFillSound} from 'react-icons/ai'
 import {BiLoaderCircle} from 'react-icons/bi'
 import {MdError} from 'react-icons/md'
@@ -41,7 +41,7 @@ const Definition = () => {
         </div>
         <div className='flex flex-col items-center'>
         <MdError className='text-4xl text-ctwo mb-3' />
-        <p className='text-cone text-xl mb-24'>not found</p>
+        <p className='text-cone text-xl mb-24'>word not found</p>
       </div>
       </>
   )}
@@ -64,7 +64,7 @@ const Definition = () => {
     <>
     <div className='flex justify-between mb-5 text-cone'>
       <IoMdArrowRoundBack className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/')}/>
-      <BsFillBookmarkHeartFill className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/bookmarks')}/>
+      <BsBookmarkHeart className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/bookmarks')}/>
     </div>
     <div className='flex flex-col items-center'>
       <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-5 pl-8 pr-8'>{word}</h1>

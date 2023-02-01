@@ -17,7 +17,8 @@ const Home = () => {
 
   return (
     <>
-    <div className='flex flex-col items-end mb-10 text-cone'>
+    <div className='flex justify-between mb-5 text-cone'>
+    <FaInfoCircle className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/about')} />
       <BsFillBookmarkHeartFill className='text-2xl cursor-pointer text-ctwo justify-end' onClick={()=> navigate('/bookmarks')}/>
       </div>
       <div className='flex flex-col items-center mt-10'>
@@ -26,13 +27,12 @@ const Home = () => {
         <p className=' text-sm text-cone'>your everyday dictionary for easy access</p>
         <div className='p-10'>
           <form onSubmit={handleSubmit}>
-          <input className='w-64 h-12 border-2 border-cfour bg-cfour rounded-lg text-center text-cone'
+          <input className='w-64 h-12 border-2 border-cfour bg-cfour rounded-lg text-center text-cone focus:outline-none'
           placeholder='search'
           value={word}
           onChange={e => setWord(e.target.value)}></input>
           </form>
         </div>
-        <FaInfoCircle className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/about')} />
       </div>
     </>
   )

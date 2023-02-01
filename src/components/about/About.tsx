@@ -13,13 +13,13 @@ const About = () => {
       <IoMdArrowRoundBack className='text-2xl cursor-pointer mb-5 text-cone justify-self-start' onClick={()=> navigate('/')}/>
       <div className='border-4 border-cfour rounded-lg bg-cfour'>
         <h4 className='text-md text-cthree text-center mt-2 mb-3'>about the friendly lexicon</h4>
-        <p className='text-sm text-left text-cone ml-3 mr-3 mt-2 mb-2'>This app was created by Claudia Pereira Carion as a hack week project for the Post Graduate Program at <a href="http://salt.dev">SALT</a>.<br/><br/>
+        <p className='text-sm text-left text-cone ml-3 mr-3 mt-2 mb-2'>This app was created as a hack project for the Post Graduate Program at School of Applied Technology <a href="http://salt.dev">&lt;/salt&gt;</a>.<br/><br/>
         The main focus of this project was to learn Tailwind CSS and practise developing the frontend of an app.
-        The app was named the friendly lexicon because the design, color theme and font of the app is catered towards people with dyslexia and/or color blindness.</p>
+        The app is called the friendly lexicon because it was designed to be accessible to people with dyslexia and/or color blindness.</p>
         <div className='flex justify-around mt-5 mb-3 text-cone'>
-          <AiFillGithub className='text-2xl text-ctwo cursor-pointer' />
-          <AiFillLinkedin className='text-2xl text-ctwo cursor-pointer' />
-          <MdEmail className='text-2xl text-ctwo cursor-pointer' />
+          <a href='https://github.com/claudiacarion'><AiFillGithub className='text-2xl text-ctwo cursor-pointer' /></a>
+          <a href='https://www.linkedin.com/in/claudia-pereira-carion/'><AiFillLinkedin className='text-2xl text-ctwo cursor-pointer' /></a>
+          <a href='mailto:claudia.carion@appliedtechnology.se'><MdEmail className='text-2xl text-ctwo cursor-pointer' /></a>
         </div>
       </div>
     </div>
