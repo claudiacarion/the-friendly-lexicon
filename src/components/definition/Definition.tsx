@@ -24,7 +24,6 @@ const Definition = () => {
         const phonetics = data[0].phonetics;
         if(!phonetics.length) return;
         const url = phonetics[0].audio;
-        console.log('URL', url)
         setAudio(url);
       } catch {
         setError(true);
@@ -36,16 +35,20 @@ const Definition = () => {
 
   if (error) {
     return (
-      <div className='flex flex-col items-center mt-20'>
-        <MdError className='text-4xl text-ctwo mb-3' />
-        <p className='text-cone text-xl mb-5'>not found</p>
+      <>
+      <div className='flex justify-between mb-5 text-cone'>
         <IoMdArrowRoundBack className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/')}/>
+        </div>
+        <div className='flex flex-col items-center'>
+        <MdError className='text-4xl text-ctwo mb-3' />
+        <p className='text-cone text-xl mb-24'>not found</p>
       </div>
+      </>
   )}
 
   if (loading) {
     return (
-      <div className='flex flex-col items-center mt-20'>
+      <div className='flex flex-col items-center'>
         <BiLoaderCircle className='text-4xl text-ctwo animate-spin mb-3' />
         <p className='text-cone text-xl'>loading</p>
       </div>
@@ -53,7 +56,6 @@ const Definition = () => {
   }
   
   let sound = new Audio(audio);
-
   const playSound = () => {
     sound.play();
   }
@@ -66,7 +68,7 @@ const Definition = () => {
     </div>
     <div className='flex flex-col items-center'>
       <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-5 pl-8 pr-8'>{word}</h1>
-      <AiFillSound className='text-2xl text-ctwo mb-5 cursor-pointer' onClick={playSound}/>
+      {audio && <AiFillSound className='text-2xl text-ctwo mb-5 cursor-pointer' onClick={playSound}/>}
     </div>
     <div>
       <div className='border-4 border-cfour rounded-lg bg-cfour'>
