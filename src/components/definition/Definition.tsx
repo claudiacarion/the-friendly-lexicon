@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useParams, useNavigate } from 'react-router-dom'
 import {MdOutlineArrowBack} from 'react-icons/md'
-import {BsBookmarkHeart} from 'react-icons/bs'
+import {BsFillBookmarkHeartFill} from 'react-icons/bs'
 import {AiFillSound} from 'react-icons/ai'
 
 const Definition = () => {
@@ -21,12 +21,12 @@ const Definition = () => {
 
   return (
     <><div className='flex justify-between mb-10 text-cone'>
-      <MdOutlineArrowBack className='text-2xl cursor-pointer	' onClick={()=> navigate('/')}/>
-      <BsBookmarkHeart className='text-2xl cursor-pointer' />
+      <MdOutlineArrowBack className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/')}/>
+      <BsFillBookmarkHeartFill className='text-2xl cursor-pointer text-ctwo' />
     </div>
     <div className='flex flex-col items-center'>
       <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-5 pl-8 pr-8'>{word}</h1>
-      <AiFillSound className='text-2xl text-cone mb-5 cursor-pointer' />
+      <AiFillSound className='text-2xl text-ctwo mb-5 cursor-pointer' />
     </div>
     <div>
       <div className='border-4 border-cfour rounded-lg bg-cfour'>
