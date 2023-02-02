@@ -6,30 +6,31 @@ import Definition from './components/definition/Definition';
 import About from './components/about/About';
 
 const App = () => {
-  const [bookmarks, setBookmarks] = useState({} as any);
+  const [bookmarks, setBookmarks] = useState({});
 
   const addBookmark = (word: string, definition: string) => {
-    setBookmarks((prev: any) => ({ ...prev, [word]: definition }));
+    setBookmarks(prev => ({ ...prev, [word]: definition }));
   };
 
   const removeBookmark = (word: string) => {
-    const temp = { ...bookmarks };
+    setBookmarks(prev => {
+    const temp = { ...prev as any};
     delete temp[word];
     return temp;
-  }
+  })};
 
   return (
     <div className=' min-h-screen bg-cfive font-century p-10 items-center'>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/bookmarks" element={<Bookmarks />} />
-        <Route path="/definition/:word" element={<Definition />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/bookmarks" element={<Bookmarks />} />
+          <Route path="/definition/:word" element={<Definition bookmarks={bookmarks} addBookmark={addBookmark} removeBookmark={removeBookmark}/>} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+      </div>
   );
 }
 
