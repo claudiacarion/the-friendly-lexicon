@@ -12,10 +12,8 @@ const App = () => {
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks)); 
   }, [bookmarks]);
 
-  console.log(bookmarks);
-
-  const addBookmark = (word: string, def: string) => {
-    setBookmarks((prev: any) => ({ ...prev, [word]: def }));
+  const addBookmark = (word: string) => {
+    setBookmarks((prev: any) => ({ ...prev, [word]: 'added' }));
   };
 
   const removeBookmark = (word: string) => {
@@ -31,7 +29,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/bookmarks" element={<Bookmarks />} />
+          <Route path="/bookmarks" element={<Bookmarks bookmarks={bookmarks}/>} />
           <Route path="/definition/:word" element={<Definition bookmarks={bookmarks} addBookmark={addBookmark} removeBookmark={removeBookmark}/>} />
           <Route path="/about" element={<About />} />
         </Routes>

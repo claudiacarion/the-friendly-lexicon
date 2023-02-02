@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { IoMdArrowRoundBack } from 'react-icons/io'
-import { BsBookmarkHeart } from 'react-icons/bs'
-import { BsBookmarkHeartFill } from 'react-icons/bs'
+import { BsBookmarkPlus } from 'react-icons/bs'
+import { BsBookmarkDashFill } from 'react-icons/bs'
 import { AiFillSound } from 'react-icons/ai'
 import { BiLoaderCircle } from 'react-icons/bi'
 import { MdError } from 'react-icons/md'
@@ -72,9 +72,9 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
   return (
     <>
       <div className='flex justify-between mb-5 text-cone'>
-        <IoMdArrowRoundBack className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/')}/>
-        <button onClick={() => isBookmarked? removeBookmark(word) : addBookmark(word, definitionData)}>{isBookmarked? <BsBookmarkHeartFill className='text-2xl cursor-pointer text-ctwo'/>
-        : <BsBookmarkHeart className='text-2xl cursor-pointer text-ctwo'/>}</button>
+        <IoMdArrowRoundBack className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate(-1)}/>
+        <button onClick={() => isBookmarked? removeBookmark(word) : addBookmark(word, definitionData)}>{isBookmarked? <BsBookmarkDashFill className='text-2xl cursor-pointer text-ctwo'/>
+        : <BsBookmarkPlus className='text-2xl cursor-pointer text-ctwo'/>}</button>
       </div>
       <div className='flex flex-col items-center'>
         <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-5 pl-8 pr-8'>{word}</h1>
