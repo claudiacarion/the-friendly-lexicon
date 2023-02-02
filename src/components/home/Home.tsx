@@ -19,10 +19,10 @@ const Home = () => {
     <>
     <div className='flex justify-between mb-5 text-cone'>
     <FaInfoCircle className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/about')} />
-      <BsBookmarkHeartFill className='text-2xl cursor-pointer text-ctwo justify-end' onClick={()=> navigate('/bookmarks')}/>
+      <BsBookmarkHeartFill className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/bookmarks')}/>
       </div>
       <div className='flex flex-col items-center mt-10'>
-        <img src={homepic} alt="img" className="h-auto w-64" />{/*https://www.freepik.com/premium-vector/young-woman-enjoy-reading-book_32439304.htm#query=book&position=5&from_view=search&track=sph*/}
+        <img src={homepic} alt="img" className="h-auto w-64" />{/*https://www.freepik.com/premium-vector/young-woman-enjoy-reading-book_32439304.htm*/}
         <h1 className='font-bold text-2xl pb-2 text-ctwo text-center'>the friendly lexicon</h1>
         <p className=' text-sm text-cone text-center'>your everyday dictionary for easy access</p>
         <div className='p-10'>

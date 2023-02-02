@@ -15,11 +15,12 @@ const Bookmarks = (bookmarks: BookmarkProps) => {
       <div className='border-4 border-cfour rounded-lg bg-cfour'>
           <h4 className='text-md text-cthree text-center mt-2 mb-5'>bookmarks</h4>
           <div className='flex flex-col items-center'>
-          {Object.keys(bookmarks.bookmarks).map((word: string) => (
-          <ul><li className='text-md h-10 text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-3 pl-5 pr-5 ml-5 mr-5 cursor-pointer' onClick={()=>navigate(`/definition/${word}`)}>
+          { Object.keys(bookmarks.bookmarks).length === 0 ? <p className='text-cone text-md mb-5'>no bookmarks</p> : (
+          Object.keys(bookmarks.bookmarks).map((word: string) => (
+          <ul><li key={word} className='text-md h-10 text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-3 pl-5 pr-5 ml-5 mr-5 cursor-pointer' onClick={()=>navigate(`/definition/${word}`)}>
             {word}
           </li></ul>
-          ))}
+          )))}
           </div>
       </div>
     </div>

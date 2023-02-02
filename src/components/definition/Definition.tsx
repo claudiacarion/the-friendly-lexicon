@@ -79,17 +79,18 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
       <div className='flex flex-col items-center'>
         <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-5 pl-8 pr-8'>{word}</h1>
         {audio && <AiFillSound className='text-2xl text-ctwo mb-5 cursor-pointer' onClick={playSound}/>}
-      </div>
       <div>
         <div className='border-4 border-cfour rounded-lg bg-cfour'>
           <h4 className='text-md text-cthree text-center mt-2'>definition</h4>
-          {definitionData.map (def =>
+          <ul>{definitionData.map (def =>
             def.meanings.map((meaning: { partOfSpeech:string, definitions:[] }) =>
-            (<ul><li key={meaning.partOfSpeech} className='text-md text-cone mt-5 ml-3'>{meaning.partOfSpeech}
-            {meaning.definitions.map((define: { definition:string }) =>
-              <ul><li key={define.definition} className='text-sm list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li></ul>
-              )}
-              </li></ul>)))}
+            (<li key={meaning.partOfSpeech} className='text-md text-cone mt-5 ml-3'>{meaning.partOfSpeech}
+              <ul>{meaning.definitions.map((define: { definition:string }) =>
+                <li key={define.definition} className='text-sm list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li>
+                )}
+              </ul>
+            </li>)))}
+          </ul>
         </div>
         <div className='border-4 border-cfour rounded-lg bg-cfour mt-5'>
           <h4 className='text-md text-cthree text-center mt-2 mb-3'>synonyms</h4>
@@ -99,6 +100,7 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
               synonym.synonyms.map ((synonym: string) =>
               (<ul><li key={synonym} className='text-sm text-left ml-3 mr-3 mt-1 mb-2'>{synonym}</li></ul>))))}
           </div>
+              </div>
         </div>
       </div>
     </>
