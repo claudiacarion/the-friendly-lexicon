@@ -92,7 +92,7 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
             def.meanings.map((meaning: { partOfSpeech:string, definitions:[] }) =>
             (<li key={meaning.partOfSpeech} className='text-lg text-cone mt-5 ml-3'>{meaning.partOfSpeech}
               <ul>{meaning.definitions.map((define: { definition:string }) =>
-                <li key={define.definition} className='text-sm list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li>
+                <li key={define.definition} className='text-md list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li>
                 )}
               </ul>
             </li>)))}
@@ -104,7 +104,7 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
             {definitionData.map (def => 
               def.meanings.map ((synonym: { synonyms:[] }) =>
               synonym.synonyms.map ((synonym: string) =>
-              (<ul><li key={synonym} className='text-sm text-left ml-3 mr-3 mt-1 mb-2'>{synonym}</li></ul>))))}
+              (<ul><li key={synonym} className='text-md text-left ml-3 mr-3 mt-1 mb-2'>{synonym}</li></ul>))))}
           </div>
               </div>
         </div>
