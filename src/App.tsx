@@ -24,7 +24,7 @@ const App = () => {
   })};
 
   return (
-    <div className='min-h-screen bg-cfive font-century p-10 items-center'>
+    <div className='min-h-screen max-w-screen bg-cfive font-century items-center relative'>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

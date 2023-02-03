@@ -45,11 +45,13 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
   if (error) {
     return (
       <>
-        <div className='flex justify-between mb-5 text-cone'>
+    <div className='flex flex-col items-center sticky top-0 bg-cfive'>
+    <div className='flex flex-col mt-10 mb-5 w-5/6'>
           <IoMdArrowRoundBack className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate('/')}/>
         </div>
+        </div>
         <div className='flex flex-col items-center'>
-          <MdError className='text-4xl text-ctwo mb-3' />
+          <MdError className='text-4xl text-ctwo mb-3 mt-20' />
           <p className='text-cone text-xl mb-24'>word not found</p>
         </div>
       </>
@@ -58,7 +60,7 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
   if (loading) {
     return (
       <div className='flex flex-col items-center'>
-        <BiLoaderCircle className='text-4xl text-ctwo animate-spin mb-3' />
+        <BiLoaderCircle className='text-4xl text-ctwo animate-spin mb-3 mt-20' />
         <p className='text-cone text-xl'>loading</p>
       </div>
     )
@@ -71,20 +73,24 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
 
   return (
     <>
-      <div className='flex justify-between mb-5 text-cone'>
+    <div className='flex flex-col items-center sticky top-0 bg-cfive'>
+    <div className='flex flex-col mb-5 w-5/6'>
+      <div className='flex justify-between mt-10 mb-3 text-cone'>
         <IoMdArrowRoundBack className='text-2xl cursor-pointer text-ctwo' onClick={()=> navigate(-1)}/>
         <button onClick={() => isBookmarked? removeBookmark(word) : addBookmark(word, definitionData)}>{isBookmarked? <BsBookmarkDashFill className='text-2xl cursor-pointer text-ctwo'/>
         : <BsBookmarkPlus className='text-2xl cursor-pointer text-ctwo'/>}</button>
       </div>
+      </div>
+      </div>
       <div className='flex flex-col items-center'>
-        <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mb-5 pl-8 pr-8'>{word}</h1>
+        <h1 className='text-3xl h-20 w-auto text-cfive bg-ctwo rounded-lg grid grid-cols-1 place-items-center mt-2 mb-5 pl-8 pr-8'>{word}</h1>
         {audio && <AiFillSound className='text-2xl text-ctwo mb-5 cursor-pointer' onClick={playSound}/>}
-      <div>
+      <div className='w-5/6 mb-10'>
         <div className='border-4 border-cfour rounded-lg bg-cfour'>
           <h4 className='text-md text-cthree text-center mt-2'>definition</h4>
           <ul>{definitionData.map (def =>
             def.meanings.map((meaning: { partOfSpeech:string, definitions:[] }) =>
-            (<li key={meaning.partOfSpeech} className='text-md text-cone mt-5 ml-3'>{meaning.partOfSpeech}
+            (<li key={meaning.partOfSpeech} className='text-lg text-cone mt-5 ml-3'>{meaning.partOfSpeech}
               <ul>{meaning.definitions.map((define: { definition:string }) =>
                 <li key={define.definition} className='text-sm list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li>
                 )}

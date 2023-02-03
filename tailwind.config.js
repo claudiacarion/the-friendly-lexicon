@@ -6,13 +6,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        century: ["Century Gothic"]
+        century: ["Lexend"]
       },
       colors: {
         cone: "#363636",
         ctwo: "#242F40",
         cthree: "#947627",
-        cfour: "#FAF9F6",
+        cfour: "#faf7f6",
         cfive: "#e5e5e5",
       }
     },
