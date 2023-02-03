@@ -90,11 +90,10 @@ const Definition = ( {bookmarks, addBookmark, removeBookmark}: BookmarkProps) =>
           <h4 className='text-md text-cthree text-center mt-2'>definition</h4>
           <ul>{definitionData.map (def =>
             def.meanings.map((meaning: { partOfSpeech:string, definitions:[] }) =>
-            (<li key={meaning.partOfSpeech} className='text-xl text-cone mt-5 ml-3'>{meaning.partOfSpeech}
-              <ul>{meaning.definitions.map((define: { definition:string }) =>
-                <li key={define.definition} className='text-md list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li>
-                )}
-              </ul>
+            (<li key={meaning.partOfSpeech} className='text-md text-cone mt-5 ml-3'>{meaning.partOfSpeech}
+              {meaning.definitions.map((define: { definition:string }) =>
+                <ul><li key={define.definition} className='text-md list-disc text-left ml-8 mr-8 mt-1 mb-2'>{define.definition}</li>
+                </ul>)}
             </li>)))}
           </ul>
         </div>
