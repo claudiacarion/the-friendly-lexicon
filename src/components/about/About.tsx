@@ -25,7 +25,7 @@ const About = () => {
             The app is called the friendly lexicon because it was designed to be accessible to people with dyslexia and/or color blindness.
           </p>
           <p className='text-sm text-left text-cone ml-3 mr-3 mt-5 mb-5'>
-            homepage image created by<br/> <a href="https://www.freepik.com/premium-vector/young-woman-enjoy-reading-book_32439304.htm">drawlab</a> - www.freepik.com
+            homepage image created by <a href="https://www.freepik.com/premium-vector/young-woman-enjoy-reading-book_32439304.htm">drawlab</a> - www.freepik.com
           </p>
           <h4 className='text-md text-cthree text-center mt-2 mb-3'>contact the developer</h4>
           <div className='flex justify-around mt-2 mb-3 text-cone'>
